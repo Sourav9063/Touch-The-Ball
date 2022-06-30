@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(19, 1, 1);
+    margin: 0;
+}
+
+.centerChildren {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    height: 30%;
+
+    background-color: rgb(33, 14, 14);
+}
+
+header h1 {
+    display: block;
+    color: rgb(103, 27, 20);
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pixel {
+
+    background-color: rgb(129, 4, 4);
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    transition: all .5s cubic-bezier(0.47, 1.67, 0.41, 0.8);
+    border-radius: 100px;
+}
