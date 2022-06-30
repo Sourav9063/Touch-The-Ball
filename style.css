@@ -38,3 +38,12 @@ header h1 {
     transition: all .5s cubic-bezier(0.47, 1.67, 0.41, 0.8);
     border-radius: 100px;
 }
+
+.not-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

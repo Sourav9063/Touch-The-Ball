@@ -22,6 +22,8 @@ const timeView = document.createElement('h1');
 timeView.innerText = time;
 timeView.style.fontSize = '7em';
 timeView.style.color = 'rgba(255,255,255,0.35)';
+timeView.classList.add('not-selectable');
+count.classList.add('not-selectable');
 
 pixel.onmouseover = () => {
     // console.log('ara ara');
