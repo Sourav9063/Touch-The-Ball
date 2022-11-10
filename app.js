@@ -9,6 +9,8 @@ const playTime = 30;
 let timer;
 
 const pixel = document.querySelector('.pixel');
+let your_high_score = document.querySelector('.your_high_score');
+your_high_score.innerText = localStorage.getItem('high_score') || 0;
 let touchCount = 0;
 
 const count = document.createElement('h1');
@@ -69,6 +71,9 @@ pixel.onmouseover = () => {
 
 
 const reset = () => {
+
+    localStorage.setItem('high_score', your_high_score.innerText);
+    your_high_score.innerText = Math.max(touchCount, localStorage.getItem('high_score') || 0);
     timeView.innerText = 'Your score: ' + touchCount;
     window.scrollTo({ top: 0, behavior: 'smooth' });
     count.innerText = 0;
