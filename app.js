@@ -10,7 +10,11 @@ let timer;
 
 const pixel = document.querySelector('.pixel');
 let your_high_score = document.querySelector('.your_high_score');
+
 your_high_score.innerText = localStorage.getItem('high_score') || 0;
+
+
+
 let touchCount = 0;
 
 const count = document.createElement('h1');
@@ -72,8 +76,8 @@ pixel.onmouseover = () => {
 
 const reset = () => {
 
-    localStorage.setItem('high_score', your_high_score.innerText);
     your_high_score.innerText = Math.max(touchCount, localStorage.getItem('high_score') || 0);
+    localStorage.setItem('high_score', your_high_score.innerText);
     timeView.innerText = 'Your score: ' + touchCount;
     window.scrollTo({ top: 0, behavior: 'smooth' });
     count.innerText = 0;
@@ -88,3 +92,53 @@ const clamp = (val, min, max) => {
     return Math.min(Math.max(val, min), max);
 
 };
+
+
+// uid
+function uidGen(length = 16) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+    }
+    return result;
+}
+
+
+// console.log(uidGen())
+let myUid = localStorage.getItem("myUid");
+console.log({ myUid })
+if (myUid === null) {
+    localStorage.setItem("myUid", uidGen())
+    myUid = localStorage.getItem("myUid")
+    console.log(myUid)
+}
+
+
+// json storage
+//https://extendsclass.com/json-storage.html#apiDocumentation
+// 617fe2f7-ade6-11ed-a58d-0242ac110002
+
+const baseUrl = "https://json.extendsclass.com/bin/cfb382b3a92d";
+
+// const score = {
+//     score: 0,
+//     myUid: "",
+//     name: "",
+// }
+
+// const json = { top3: [score, score, score] };
+
+// console.log(JSON.stringify(json));
+
+
+fetch(baseUrl, {
+}).then(res => {
+    console.log(res)
+    return res.json()
+})
+    .then(res => console.dir(res))
+

@@ -4,6 +4,13 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
 }
 
 body {
@@ -59,4 +66,8 @@ header h1 {
 .score {
     color: rgba(255, 255, 255, 0.55);
     font-size: 1.5em;
+}
+
+.small-text {
+    font-size: .8rem;
 }
