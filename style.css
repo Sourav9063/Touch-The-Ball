@@ -4,6 +4,13 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
 }
 
 body {
@@ -59,4 +66,54 @@ header h1 {
 .score {
     color: rgba(255, 255, 255, 0.55);
     font-size: 1.5em;
+    margin: 2rem;
+}
+
+.small-text {
+    font-size: .8rem;
+}
+
+.high-score-server {
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    justify-items: stretch;
+
+}
+
+.score>hr {
+    margin-left: 5%;
+    margin-right: 5%;
+
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    opacity: .2;
+}
+
+.high-score-ol>li {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+    justify-items: flex-end;
+    justify-self: end;
+    align-items: end;
+    flex-wrap: wrap;
+
+}
+
+/* .high-score-ol>li :last-child {
+  
+    margin-left: auto;
+
+} */
+
+
+.high-score-ol {
+    /* width: 60%; */
+    margin-left: 1rem;
+    flex-grow: 1;
 }
